@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Hagspar</string>
+    <string name="view_button">Skoða</string>
+    <string name="delete_button">Eyða</string>
+    <string name="forecast_list_text">Spár</string>
+    <string name="new_forecast_button">Ný spá</string>
+    <string name="prompt_email">Tölvupóstur</string>
+    <string name="prompt_password">Lykilorð</string>
+    <string name="log_in_button">Skrá inn</string>
+</resources>

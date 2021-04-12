@@ -9,7 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.hagspar.ForecastManagerActivity;
+import com.example.hagspar.LoginActivity;
 import com.example.hagspar.R;
 import com.example.hagspar.ViewForecastActivity;
 
@@ -61,9 +64,11 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
             @Override
             public void onClick(View v) {
                 Log.e("test", "delete takki");
+                //TODO!
                 //ForecastManager.getInstance(context).deleteForecast(list.get(position)[0]);
-
                 list.remove(position);
+                notifyDataSetChanged();
+                Toast.makeText(context, "Spá hefur verið eytt", Toast.LENGTH_SHORT).show();
             }
         });
         addBtn.setOnClickListener(new View.OnClickListener(){
@@ -71,8 +76,8 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
             public void onClick(View v) {
                 //do something
                 Log.e("test", "view takki");
-                //ForecastManager.getInstance(context).viewForecast(list.get(position)[0]);
-                context.startActivity(ViewForecastActivity.newIntent(context,list.get(position)[0]));
+                ForecastManager forecastManager = ForecastManager.getInstance(context);
+                forecastManager.viewForecast(list.get(position)[0], context);
             }
         });
 

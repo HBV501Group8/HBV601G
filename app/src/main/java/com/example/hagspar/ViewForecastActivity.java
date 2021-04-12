@@ -7,6 +7,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.hagspar.forecast.ForecastManager;
 import com.example.hagspar.forecast.data.Forecast;
 import com.example.hagspar.networking.NetworkCallback;
 import com.example.hagspar.networking.NetworkManager;
@@ -25,32 +27,23 @@ public class ViewForecastActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_forecast);
-        Log.e("test", "ViewForecastActivity");
-        NetworkManager networkManager = NetworkManager.getInstance(this);
-        networkManager.getForecast(getIntent().getStringExtra("id"), new NetworkCallback<Forecast>() {
-            @Override
-            public void onSuccess(Forecast result) {
-                mForecast = result;
 
-                double[] primitiveArray = mForecast.getForecastInputs().get(0).getSeries();
-                int len = primitiveArray.length;
-                Double[] input = new Double[len];
-                for (int index = len-1; index >= 0; index--)
-                    input[index] = Double.valueOf(primitiveArray[index]);
-               drawInput(input);
+        ForecastManager forecastManager = ForecastManager.getInstance(this);
+        mForecast = forecastManager.getCurrentForecast();
 
-                primitiveArray = mForecast.getForecastResults().get(0).getSeries();
-                len = primitiveArray.length;
-                Double[] results = new Double[len];
-                for (int index = 0; index < len; index++)
-                    input[index] = Double.valueOf(primitiveArray[index]);
-                //drawResults(results);
-            }
-            @Override
-            public void onFail(String errorString) {
-                Log.e("test", errorString);
-            }
-        });
+        double[] primitiveArray = mForecast.getForecastInputs().get(0).getSeries();
+        int len = primitiveArray.length;
+        Double[] input = new Double[len];
+        for (int index = len-1; index >= 0; index--)
+            input[index] = Double.valueOf(primitiveArray[index]);
+        drawInput(input);
+
+        primitiveArray = mForecast.getForecastResults().get(0).getSeries();
+        len = primitiveArray.length;
+        Double[] results = new Double[len];
+        for (int index = 0; index < len; index++)
+            input[index] = Double.valueOf(primitiveArray[index]);
+        //drawResults(results);
     }
 
     private void drawInput(Double[] input){

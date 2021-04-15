@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Hagspar</string>
+
+    <!--ForecastManagerActivity-->
+    <string name="view_button">Skoða</string>
+    <string name="delete_button">Eyða</string>
+    <string name="forecast_list_text">Spár</string>
+    <string name="new_forecast_button">Ný spá</string>
+    <string name="prompt_username">Notendanafn</string>
+    <string name="prompt_password">Lykilorð</string>
+    <string name="log_in_button">Skrá inn</string>
+
+    <!--ForecastBuilderActivity-->
+    <string name="forecast_name">Nafn spár</string>
+    <string name="forecast_time_label">Lengd spár</string>
+    <string name="forecast_model_label">Spálíkan</string>
+    <string name="forecast_model_arima">ARIMA</string>
+    <string name="forecast_model_var">VAR</string>
+    <string name="forecast_series_label">Spábreytur</string>
+    <string name="mannfjoldi_is_checkbox">Fjöldi íslenskra ríkisborgara</string>
+    <string name="mannfjoldi_erl_checkbox">Fjöldi erlendra ríkisborgara</string>
+    <string name="atvinnuleysi_rvk_checkbox">Atvinnuleysi í Reykjavík</string>
+    <string name="atvinnuleysi_lands_checkbox">Atvinnuleysi</string>
+    <string name="einkaneysla_checkbox">Einkaneysla</string>
+    <string name="samneysla_checkbox">Samneysla</string>
+    <string name="fjarmunamyndun_checkbox">Fjármunamyndun</string>
+    <string name="vara_ut_checkbox">Útflutningur vara</string>
+    <string name="vara_inn_checkbox">Innflutningur vara</string>
+    <string name="thjonusta_ut_checkbox">Útflutningur þjónustu</string>
+    <string name="thjonusta_inn_checkbox">Innflutningur þjónustu</string>
+    <string name="vlf_checkbox">Verg landsframleiðsla</string>
+    <string name="generate_forecast_button">Búa til spá</string>
+
+    <string-array name="time_picker_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+</resources>

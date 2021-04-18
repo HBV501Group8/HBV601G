@@ -2,6 +2,8 @@ package com.example.hagspar.networking;
 
 import android.content.Context;
 import android.util.Log;
+
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -90,6 +92,7 @@ public class NetworkManager {
         mQueue.add(request);
     }
 
+
     public void generateForecast(String username, String name, String length, String forecastModel,
                                  ArrayList<String> seriesNames, final NetworkCallback<String> callback){
         JSONObject postData = new JSONObject();
@@ -119,8 +122,45 @@ public class NetworkManager {
             }
         }
         );
+        // Does not retry and will wait a full minute before timeout
+        request.setRetryPolicy(new DefaultRetryPolicy(60000, 0, 0));
         mQueue.add(request);
+    }
 
+    public void deleteForecast(String id,  final NetworkCallback<String> callback) {
+        StringRequest request = new StringRequest(
+                Request.Method.GET, SERVER_URL + "deleteforecast/" + id , new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                callback.onSuccess(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                callback.onFail(error.toString());
+            }
+        }
+        );
+        mQueue.add(request);
+    }
+
+    public void updateForecast(String id,  final NetworkCallback<String> callback) {
+        StringRequest request = new StringRequest(
+                Request.Method.GET, SERVER_URL + "updateforecast/" + id , new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                callback.onSuccess(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                callback.onFail(error.toString());
+            }
+        }
+        );
+        // Does not retry and will wait a full minute before timeout
+        request.setRetryPolicy(new DefaultRetryPolicy(60000, 0, 0));
+        mQueue.add(request);
     }
 
     public void userSignIn(String username, String password, final NetworkCallback<String> callback) {

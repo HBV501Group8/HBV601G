@@ -20,7 +20,7 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="test" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="AutoImportSettings">
@@ -46,24 +46,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82543d8a-0844-4c00-9fc7-2bbc4110ed45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HagsparForecastTemplate.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ForecastBuilderActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ForecastBuilderActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ForecastManagerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ForecastManagerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/LoginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ViewForecastActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ViewForecastActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForcastManagerCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForecastListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForecastListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForecastListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/adapters/ForecastListAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForecastManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForecastManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/networking/NetworkCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/networking/NetworkCallback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/networking/NetworkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/networking/NetworkManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_builder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_builder.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_forecast.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_forecast.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +74,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="layoutResourceFile" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -108,7 +103,9 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-03-22T10:38:38.481727700Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android-custom-viewC:/Users/brynh/AppData/Local/Android/Sdk/sources/android-30/android/widget/LinearLayout.java_SELECTED" value="LinearLayout" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="multi-representation-previewC:/Users/brynh/AppData/Local/Android/Sdk/sources/android-30/android/widget/LinearLayout.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -117,6 +114,10 @@
     </key>
     <key name="android.template.-1383398388">
       <recent name="com.example.hagspar" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.hagspar.adapters" />
+      <recent name="com.example.hagspar.UI" />
     </key>
   </component>
   <component name="RunManager">
@@ -209,6 +210,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="393" y="164" key="#Notifications" timestamp="1616106631964">
@@ -219,10 +221,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1616285614907" />
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1617840062629">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1618529115413">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1617840062629" />
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1618529115413" />
+    <state x="424" y="209" width="583" height="270" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1618567242236">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="424" y="209" width="583" height="270" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1618567242236" />
+    <state x="167" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1618612149615">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="167" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1618612149615" />
     <state x="93" y="93" width="1095" height="495" key="AVDManager" timestamp="1616286142118">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -235,26 +245,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="500" y="126" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1616339566559" />
+    <state x="438" y="87" key="AndroidProcessChooserDialog" timestamp="1618443478219">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="438" y="87" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1618443478219" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1616276717377">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1616276717377" />
-    <state width="1236" height="121" key="GridCell.Tab.0.bottom" timestamp="1617808997850">
+    <state width="618" height="121" key="GridCell.Tab.0.bottom" timestamp="1618618217835">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="121" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1617808997850" />
-    <state width="1236" height="121" key="GridCell.Tab.0.center" timestamp="1617808997850">
+    <state width="618" height="121" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1618618217835" />
+    <state width="618" height="121" key="GridCell.Tab.0.center" timestamp="1618618217833">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="121" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1617808997850" />
-    <state width="1236" height="121" key="GridCell.Tab.0.left" timestamp="1617808997848">
+    <state width="618" height="121" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1618618217833" />
+    <state width="618" height="121" key="GridCell.Tab.0.left" timestamp="1618618217830">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="121" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1617808997848" />
-    <state width="1236" height="121" key="GridCell.Tab.0.right" timestamp="1617808997850">
+    <state width="618" height="121" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1618618217830" />
+    <state width="618" height="121" key="GridCell.Tab.0.right" timestamp="1618618217833">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="121" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1617808997850" />
+    <state width="618" height="121" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1618618217833" />
     <state x="221" y="83" key="IDE.errors.dialog" timestamp="1616340799006">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -279,10 +293,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" width="589" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1616105386895" />
-    <state x="298" y="151" key="run.anything.popup" timestamp="1617832757177">
+    <state x="298" y="151" key="run.anything.popup" timestamp="1618525277224">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1617832757177" />
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1618525277224" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1617921530385">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

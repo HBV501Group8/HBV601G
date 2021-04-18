@@ -6,16 +6,23 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
 import android.os.Bundle;
 
 import com.example.hagspar.forecast.ForecastManager;
+import com.example.hagspar.adapters.ForecastViewAdapter;
 import com.example.hagspar.forecast.data.Forecast;
-import com.example.hagspar.networking.NetworkCallback;
-import com.example.hagspar.networking.NetworkManager;
+import com.example.hagspar.forecast.data.ForecastResult;
+import com.google.android.material.tabs.TabLayout;
 
 public class ViewForecastActivity extends AppCompatActivity {
 
     private static Forecast mForecast;
+
+    TabLayout tabLayout;
+    ViewPager viewPager;
+    ForecastViewAdapter forecastViewAdapter;
 
     public static Intent newIntent(Context context, String id){
         Intent intent = new Intent(context, ViewForecastActivity.class);
@@ -30,6 +37,23 @@ public class ViewForecastActivity extends AppCompatActivity {
 
         ForecastManager forecastManager = ForecastManager.getInstance(this);
         mForecast = forecastManager.getCurrentForecast();
+
+
+        viewPager = findViewById(R.id.forecastViewPager);
+        tabLayout = findViewById(R.id.forecastTabLayout);
+
+
+        for(ForecastResult result: mForecast.getForecastResults()) {
+            tabLayout.addTab(tabLayout.newTab());
+        }
+
+
+        forecastViewAdapter = new ForecastViewAdapter(getSupportFragmentManager(), tabLayout.getTabCount(), this);
+        viewPager.setAdapter(forecastViewAdapter);
+
+        // It is used to join TabLayout with ViewPager.
+        tabLayout.setupWithViewPager(viewPager);
+
 
         double[] primitiveArray = mForecast.getForecastInputs().get(0).getSeries();
         int len = primitiveArray.length;

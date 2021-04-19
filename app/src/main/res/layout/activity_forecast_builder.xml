@@ -7,166 +7,175 @@
         android:layout_height="match_parent"
         tools:context=".ForecastBuilderActivity">
 
+    <!-- Loading spinner -->
+    <include layout="@layout/loading_overlay"/>
 
-    <LinearLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:fillViewport="true">
 
-        <EditText
-            android:id="@+id/forcast_name_input"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/forecast_name"/>
-
-        <TextView
-            android:id="@+id/time_picker_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:text="@string/forecast_time_label"
-            android:textAlignment="gravity" />
-
-        <Spinner
-            android:id="@+id/length_picker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/model_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:text="@string/forecast_model_label" />
-
-        <RadioGroup
-            android:id="@+id/model_radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/arima_radio_button"
-                android:layout_width="121dp"
-                android:layout_height="wrap_content"
-                android:text="@string/forecast_model_arima"
-                android:checked="true" />
-
-            <RadioButton
-                android:id="@+id/var_radio_button"
-                android:layout_width="113dp"
-                android:layout_height="wrap_content"
-                android:text="@string/forecast_model_var" />
-
-        </RadioGroup>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <EditText
+                android:id="@+id/forcast_name_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/forecast_name"/>
+
             <TextView
-                android:id="@+id/series_label"
+                android:id="@+id/time_picker_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/forecast_series_label" />
+                android:singleLine="true"
+                android:text="@string/forecast_time_label"
+                android:textAlignment="gravity" />
 
-            <CheckBox
-                android:id="@+id/mannfjoldi_is_checkbox"
+            <Spinner
+                android:id="@+id/length_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/model_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="@string/forecast_model_label" />
+
+            <RadioGroup
+                android:id="@+id/model_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/mannfjoldi_is_checkbox" />
+                android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/mannfjoldi_erl_checkbox"
+                <RadioButton
+                    android:id="@+id/arima_radio_button"
+                    android:layout_width="121dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forecast_model_arima"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/var_radio_button"
+                    android:layout_width="113dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forecast_model_var" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/series_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forecast_series_label" />
+
+                <CheckBox
+                    android:id="@+id/mannfjoldi_is_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/mannfjoldi_is_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/mannfjoldi_erl_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/mannfjoldi_erl_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/atvinnuleysi_rvk_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/atvinnuleysi_rvk_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/atvinnuleysi_lands_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/atvinnuleysi_lands_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/einkaneysla_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/einkaneysla_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/samneysla_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/samneysla_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/fjarmunamyndun_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/fjarmunamyndun_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/vara_ut_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/vara_ut_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/vara_inn_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/vara_inn_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/thjonusta_ut_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/thjonusta_ut_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/thjonusta_inn_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/thjonusta_inn_checkbox" />
+
+                <CheckBox
+                    android:id="@+id/vlf_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/vlf_checkbox" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/generate_forecast_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/mannfjoldi_erl_checkbox" />
-
-            <CheckBox
-                android:id="@+id/atvinnuleysi_rvk_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/atvinnuleysi_rvk_checkbox" />
-
-            <CheckBox
-                android:id="@+id/atvinnuleysi_lands_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/atvinnuleysi_lands_checkbox" />
-
-            <CheckBox
-                android:id="@+id/einkaneysla_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/einkaneysla_checkbox" />
-
-            <CheckBox
-                android:id="@+id/samneysla_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/samneysla_checkbox" />
-
-            <CheckBox
-                android:id="@+id/fjarmunamyndun_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/fjarmunamyndun_checkbox" />
-
-            <CheckBox
-                android:id="@+id/vara_ut_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/vara_ut_checkbox" />
-
-            <CheckBox
-                android:id="@+id/vara_inn_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/vara_inn_checkbox" />
-
-            <CheckBox
-                android:id="@+id/thjonusta_ut_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/thjonusta_ut_checkbox" />
-
-            <CheckBox
-                android:id="@+id/thjonusta_inn_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/thjonusta_inn_checkbox" />
-
-            <CheckBox
-                android:id="@+id/vlf_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/vlf_checkbox" />
+                android:text="@string/generate_forecast_button" />
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/generate_forecast_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/generate_forecast_button" />
-
-    </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

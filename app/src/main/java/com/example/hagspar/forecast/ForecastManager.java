@@ -32,7 +32,6 @@ public class ForecastManager {
     private Context mContext;
     private Forecast mCurrentForecast;
 
-    private String ERROR_MESSAGE_GENERATION = "Ekki tókst að smíða spá, reyndu aftur!";
 
     public static synchronized ForecastManager getInstance(Context context) {
         if (mInstance == null) {
@@ -45,7 +44,7 @@ public class ForecastManager {
         mContext = context;
     }
 
-    public void viewForecast(String id, Context context) {
+    public void viewForecast(String id, String username, Context context) {
         NetworkManager networkManager = NetworkManager.getInstance(context);
         networkManager.getForecast(id, new NetworkCallback<String>() {
             @Override
@@ -71,7 +70,7 @@ public class ForecastManager {
                     setCurrentForecast(new Forecast(id, name, time, results, input));
 
                     // Start view forecast activity
-                    context.startActivity(ViewForecastActivity.newIntent(context, id));
+                    context.startActivity(ViewForecastActivity.newIntent(context, id, username));
 
 
                 } catch (JSONException e) {
@@ -86,38 +85,62 @@ public class ForecastManager {
     }
 
     public void generateForecast(String username, String name, String length, String forecastModel,
-                                 ArrayList<String> seriesNames, Context context) {
+                                 ArrayList<String> seriesNames, Context context, ForecastCallback<String> callback) {
         NetworkManager networkManager = NetworkManager.getInstance(context);
         networkManager.generateForecast(username, name, length, forecastModel, seriesNames, new NetworkCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                if(result.equals("failed")) {
-                    Toast.makeText(context, ERROR_MESSAGE_GENERATION, Toast.LENGTH_SHORT).show();
-                    Log.e("test", result);
-                }else{
-                    Log.e("test", result);
-                    viewForecast(result, context);
-                }
+                callback.whenReady(result);
             }
             @Override
             public void onFail(String errorString) {
-                Toast.makeText(context, ERROR_MESSAGE_GENERATION, Toast.LENGTH_SHORT).show();
+                //TODO
             }
         });
 
 
     }
 
-    public void deleteForecast(String id) {
-        //TODO
-        // þetta er bara kall á get method á server! Þarf ekki meira!
+    public void deleteForecast(String id, Context context, ForecastCallback<String> callback) {
+        NetworkManager networkManager = NetworkManager.getInstance(context);
+        networkManager.deleteForecast(id, new NetworkCallback<String>() {
+            @Override
+            public void onSuccess(String result){
+                JSONObject jsonBody = null;
+                try {
+                    jsonBody = new JSONObject(result);
+                    callback.whenReady(jsonBody.getString("delete"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFail(String errorString) {
+                //TODO Handle error
+            }
+        });
     }
 
-    public void updateForecast(String id) {
-        //TODO
-        // Þetta er bara kall á update foreast method á server og
-        // svo kallað a´view foreast þegar búið er að genereita nýtt!
-        // Einfaldara generate function!
+    public void updateForecast(String id, Context context, ForecastCallback<String> callback) {
+        NetworkManager networkManager = NetworkManager.getInstance(context);
+        networkManager.updateForecast(id, new NetworkCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                JSONObject jsonBody = null;
+                try {
+                    jsonBody = new JSONObject(result);
+                    callback.whenReady(jsonBody.getString("update"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFail(String errorString) {
+                //TODO Handle error
+            }
+        });
     }
 
 
@@ -127,15 +150,12 @@ public class ForecastManager {
             @Override
             public void onSuccess(String result) {
                 Gson gson = new Gson();
-                Type listType = new TypeToken<ArrayList<String[]>>() {
-                }.getType();
-                Log.e("test", "Gson");
+                Type listType = new TypeToken<ArrayList<String[]>>(){}.getType();
                 callback.whenReady(gson.fromJson(result, listType));
             }
 
             @Override
             public void onFail(String errorString) {
-                Log.e("test", errorString);
                 //TODO Handle error
             }
         });

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hagspar.adapters_utils.LoadingUtil;
 import com.example.hagspar.networking.NetworkCallback;
 import com.example.hagspar.networking.NetworkManager;
 import com.google.gson.Gson;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+
     private String LOGIN_SUCCESSFUL = "Innskráning mótekin";
     private String ERROR_MESSAGE_LOGIN = "Innskráning mistókst, reyndu aftur";
 
@@ -27,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button submitBtn = (Button) findViewById(R.id.login_button);
+        View loadingOverlay = (View) findViewById(R.id.loading_overlay);
+        loadingOverlay.bringToFront();
 
         submitBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -37,21 +42,25 @@ public class LoginActivity extends AppCompatActivity {
                 String username = usernameField.getText().toString();
                 String password = passwordField.getText().toString();
 
+                LoadingUtil.animateView(loadingOverlay, View.VISIBLE, 0.4f, 200);
 
                 NetworkManager networkManager = NetworkManager.getInstance(LoginActivity.this);
                 networkManager.userSignIn(username, password, new NetworkCallback<String>() {
                     @Override
                     public void onSuccess(String result) {
                         if(result.equals("success")) {
+                            LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
                             Toast.makeText(LoginActivity.this, LOGIN_SUCCESSFUL, Toast.LENGTH_SHORT).show();
                             startActivity(ForecastManagerActivity.newIntent(LoginActivity.this, username));
                         }else{
+                            LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
                             Toast.makeText(LoginActivity.this, ERROR_MESSAGE_LOGIN, Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFail(String errorString) {
+                        LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
                         Toast.makeText(LoginActivity.this, ERROR_MESSAGE_LOGIN, Toast.LENGTH_SHORT).show();
                     }
                 });

@@ -1,6 +1,7 @@
-package com.example.hagspar.adapters;
+package com.example.hagspar.adapters_utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +12,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hagspar.ForecastBuilderActivity;
-import com.example.hagspar.ForecastManagerActivity;
-import com.example.hagspar.LoginActivity;
 import com.example.hagspar.R;
-import com.example.hagspar.ViewForecastActivity;
 import com.example.hagspar.forecast.ForecastCallback;
 import com.example.hagspar.forecast.ForecastManager;
 
@@ -25,10 +22,12 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
 
     private ArrayList<String[]> list = new ArrayList<String[]>();
     private Context context;
+    private Intent intent;
 
-    public ForecastListAdapter(ArrayList<String[]> list, Context context) {
+    public ForecastListAdapter(ArrayList<String[]> list, Context context, Intent intent) {
         this.list = list;
         this.context = context;
+        this.intent = intent;
     }
 
     @Override
@@ -88,7 +87,7 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
             public void onClick(View v) {
                 Log.e("test", "view takki");
                 ForecastManager forecastManager = ForecastManager.getInstance(context);
-                forecastManager.viewForecast(list.get(position)[0], context);
+                forecastManager.viewForecast(list.get(position)[0], intent.getStringExtra("username"), context);
             }
         });
 

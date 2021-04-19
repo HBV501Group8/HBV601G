@@ -44,7 +44,7 @@ public class ForecastManager {
         mContext = context;
     }
 
-    public void viewForecast(String id, Context context) {
+    public void viewForecast(String id, String username, Context context) {
         NetworkManager networkManager = NetworkManager.getInstance(context);
         networkManager.getForecast(id, new NetworkCallback<String>() {
             @Override
@@ -70,7 +70,7 @@ public class ForecastManager {
                     setCurrentForecast(new Forecast(id, name, time, results, input));
 
                     // Start view forecast activity
-                    context.startActivity(ViewForecastActivity.newIntent(context, id));
+                    context.startActivity(ViewForecastActivity.newIntent(context, id, username));
 
 
                 } catch (JSONException e) {

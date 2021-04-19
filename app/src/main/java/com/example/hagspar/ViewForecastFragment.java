@@ -1,5 +1,6 @@
 package com.example.hagspar;
 
+import android.graphics.Color;
 import android.icu.text.CaseMap;
 import android.os.Bundle;
 
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.hagspar.forecast.ForecastManager;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -33,6 +35,8 @@ public class ViewForecastFragment extends Fragment {
     private final String RESULTS_LABEL = "Spá";
     private final String UPPER_LABEL = "Efri mörk";
     private final String LOWER_LABEL = "Neðri mörk";
+
+    private final float LINE_WIDTH = 3f;
 
     public ViewForecastFragment() {
         // Required empty public constructor
@@ -68,34 +72,51 @@ public class ViewForecastFragment extends Fragment {
             entriesInput.add(new Entry(i, (float) input[i]));
         }
         LineDataSet inputDataSet = new LineDataSet(entriesInput, forecastManager.getCurrentForecast().getForecastInputs().get(mPosition).getName());
-        //inputDataSet.setDrawFilled(true);
+        inputDataSet.setDrawCircles(false);
+        inputDataSet.setLineWidth(LINE_WIDTH);
+        inputDataSet.setColor(Color.rgb(0, 0, 0));
+        inputDataSet.setDrawValues(false);
 
         // Converts result series to dataset
         ArrayList<Entry> entriesResults = new ArrayList<>();
-        entriesResults.add(new Entry(input.length, (float) input[input.length-1]));
+        entriesResults.add(new Entry(input.length-1, (float) input[input.length-1]));
         double[] results = forecastManager.getCurrentForecast().getForecastResults().get(mPosition).getSeries();
         for(int i = input.length; i < results.length + input.length -1; i++){
             entriesResults.add(new Entry(i, (float) results[i-input.length]));
         }
         LineDataSet resultsDataSet = new LineDataSet(entriesResults, RESULTS_LABEL);
+        resultsDataSet.setDrawCircles(false);
+        resultsDataSet.setLineWidth(LINE_WIDTH);
+        resultsDataSet.setColor(Color.rgb(220, 20, 60));
+        resultsDataSet.setDrawValues(false);
 
         // Converts upper series to dataset
         ArrayList<Entry> entriesUpper = new ArrayList<>();
-        entriesUpper.add(new Entry(input.length, (float) input[input.length-1]));
+        entriesUpper.add(new Entry(input.length-1, (float) input[input.length-1]));
         double[] upper = forecastManager.getCurrentForecast().getForecastResults().get(mPosition).getUpper();
         for(int i = input.length; i < upper.length + input.length -1; i++){
             entriesUpper.add(new Entry(i, (float) upper[i-input.length]));
         }
         LineDataSet upperDataSet = new LineDataSet(entriesUpper, UPPER_LABEL);
+        upperDataSet.setDrawCircles(false);
+        upperDataSet.setLineWidth(LINE_WIDTH);
+        upperDataSet.setColor(Color.rgb(105, 105, 105));
+        upperDataSet.enableDashedLine(10f, 10f, 0f);
+        upperDataSet.setDrawValues(false);
 
         // Converts lower series to dataset
         ArrayList<Entry> entriesLower = new ArrayList<>();
-        entriesLower.add(new Entry(input.length, (float) input[input.length-1]));
+        entriesLower.add(new Entry(input.length-1, (float) input[input.length-1]));
         double[] lower = forecastManager.getCurrentForecast().getForecastResults().get(mPosition).getLower();
         for(int i = input.length; i < results.length + input.length -1; i++){
             entriesLower.add(new Entry(i, (float) lower[i-input.length]));
         }
-        LineDataSet lowerDataSet = new LineDataSet(entriesLower, RESULTS_LABEL);
+        LineDataSet lowerDataSet = new LineDataSet(entriesLower, LOWER_LABEL);
+        lowerDataSet.setDrawCircles(false);
+        lowerDataSet.setLineWidth(LINE_WIDTH);
+        lowerDataSet.setColor(Color.rgb(105, 105, 105));
+        lowerDataSet.enableDashedLine(10f, 10f, 0f);
+        lowerDataSet.setDrawValues(false);
 
         // Add datasets to dataset array
 
@@ -111,6 +132,9 @@ public class ViewForecastFragment extends Fragment {
 
         // Strings for x-axis labels
         chart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(getXAxisValues()));
+        chart.setDrawGridBackground(false);
+        chart.setAutoScaleMinMaxEnabled(true);
+        chart.getDescription().setEnabled(false);
     }
 
     private ArrayList<String> getXAxisValues()

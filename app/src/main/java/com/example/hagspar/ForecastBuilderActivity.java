@@ -16,6 +16,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.hagspar.adapters_utils.LoadingUtil;
 import com.example.hagspar.forecast.ForecastCallback;
 import com.example.hagspar.forecast.ForecastManager;
 import com.example.hagspar.networking.NetworkCallback;
@@ -60,6 +61,10 @@ public class ForecastBuilderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forecast_builder);
 
+        // Loading overlay
+        View loadingOverlay = (View) findViewById(R.id.loading_overlay);
+        loadingOverlay.bringToFront();
+
         // Define options for time_picker spinner
         Spinner spinner = (Spinner) findViewById(R.id.length_picker);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -67,15 +72,17 @@ public class ForecastBuilderActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+
         // Add event handler for generate Forecast button
         Button generateBtn = (Button) findViewById(R.id.generate_forecast_button);
         generateBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
-                    return;
-                }
-                mLastClickTime = SystemClock.elapsedRealtime();
+
+                // Activate loading overlay
+                LoadingUtil.animateView(loadingOverlay, View.VISIBLE, 0.4f, 200);
+
+
                 // Define variables to be sent for generation
                 String name;
                 String length;
@@ -105,6 +112,7 @@ public class ForecastBuilderActivity extends AppCompatActivity {
 
                 // Get and validate inputs
                 if(nameEdTxt.getText() == null) {
+                    LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
                     Toast.makeText(ForecastBuilderActivity.this, ERROR_MESSAGE_NAME, Toast.LENGTH_SHORT).show();
                     return;
                 }else {
@@ -127,6 +135,7 @@ public class ForecastBuilderActivity extends AppCompatActivity {
                 });
 
                 if(series.isEmpty()) {
+                    LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
                     Toast.makeText(ForecastBuilderActivity.this, ERROR_MESSAGE_SERIES, Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -141,15 +150,16 @@ public class ForecastBuilderActivity extends AppCompatActivity {
                             @Override
                             public void whenReady(String ready) {
                                 if(ready.equals("failed")) {
+                                    LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
                                     Toast.makeText(ForecastBuilderActivity.this, ERROR_MESSAGE_GENERATION, Toast.LENGTH_SHORT).show();
                                     Log.e("test", ready);
                                     generateBtn.setEnabled(true);
                                 }else {
-                                    forecastManager.viewForecast(ready, ForecastBuilderActivity.this);
+                                    LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
+                                    forecastManager.viewForecast(ready, getIntent().getStringExtra("username"), ForecastBuilderActivity.this);
                                 }
                             }
                         });
-
             }
         });
     }

@@ -1,4 +1,4 @@
-package com.example.hagspar.adapters;
+package com.example.hagspar.adapters_utils;
 
 import android.content.Context;
 

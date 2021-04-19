@@ -46,19 +46,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82543d8a-0844-4c00-9fc7-2bbc4110ed45" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ForecastBuilderActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ForecastBuilderActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ForecastManagerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ForecastManagerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/LoginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ViewForecastActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ViewForecastActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForecastListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/adapters/ForecastListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ViewForecastFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ViewForecastFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/adapters/ForecastListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/adapters_utils/ForecastListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/adapters/ForecastViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/adapters_utils/ForecastViewAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForecastManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/forecast/ForecastManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/networking/NetworkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/networking/NetworkManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_builder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_builder.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_forecast.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_forecast.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_manager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_manager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_forecast_list.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +75,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="Interface" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -233,14 +234,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="167" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1618612149615" />
+    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618788155856">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1618788155856" />
     <state x="93" y="93" width="1095" height="495" key="AVDManager" timestamp="1616286142118">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1616286142118" />
-    <state x="433" y="172" key="AndroidCreateResourceFileDialog" timestamp="1616409935862">
+    <state x="433" y="172" key="AndroidCreateResourceFileDialog" timestamp="1618787858443">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="433" y="172" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1616409935862" />
+    <state x="433" y="172" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1618787858443" />
     <state x="500" y="126" key="AndroidCreateXmlResourceDialog" timestamp="1616339566559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -253,22 +258,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1616276717377" />
-    <state width="618" height="121" key="GridCell.Tab.0.bottom" timestamp="1618618217835">
+    <state width="1236" height="121" key="GridCell.Tab.0.bottom" timestamp="1618790363479">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="618" height="121" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1618618217835" />
-    <state width="618" height="121" key="GridCell.Tab.0.center" timestamp="1618618217833">
+    <state width="1236" height="121" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1618790363479" />
+    <state width="1236" height="121" key="GridCell.Tab.0.center" timestamp="1618790363478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="618" height="121" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1618618217833" />
-    <state width="618" height="121" key="GridCell.Tab.0.left" timestamp="1618618217830">
+    <state width="1236" height="121" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1618790363478" />
+    <state width="1236" height="121" key="GridCell.Tab.0.left" timestamp="1618790363478">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="618" height="121" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1618618217830" />
-    <state width="618" height="121" key="GridCell.Tab.0.right" timestamp="1618618217833">
+    <state width="1236" height="121" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1618790363478" />
+    <state width="1236" height="121" key="GridCell.Tab.0.right" timestamp="1618790363479">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="618" height="121" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1618618217833" />
+    <state width="1236" height="121" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1618790363479" />
     <state x="221" y="83" key="IDE.errors.dialog" timestamp="1616340799006">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -293,13 +298,13 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" width="589" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1616105386895" />
-    <state x="298" y="151" key="run.anything.popup" timestamp="1618525277224">
+    <state x="298" y="151" key="run.anything.popup" timestamp="1618789672040">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1618525277224" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1617921530385">
+    <state x="298" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1618789672040" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1618789968898">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1617921530385" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1618789968898" />
   </component>
 </project>

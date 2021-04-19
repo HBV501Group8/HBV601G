@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ViewForecastActivity">
+        <activity android:name=".ViewForecastActivity"
+                  android:screenOrientation="landscape">
         </activity>
         <activity android:name=".ForecastBuilderActivity">
         </activity>

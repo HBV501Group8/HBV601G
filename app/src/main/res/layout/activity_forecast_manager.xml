@@ -37,6 +37,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/forecastlist"
         android:visibility="gone"
+        android:divider="#FFCC00"
+        android:dividerHeight="2dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

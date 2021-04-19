@@ -2,6 +2,7 @@ package com.example.hagspar.adapters_utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +24,13 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
     private ArrayList<String[]> list = new ArrayList<String[]>();
     private Context context;
     private Intent intent;
+    private View loadingOverlay;
 
-    public ForecastListAdapter(ArrayList<String[]> list, Context context, Intent intent) {
+    public ForecastListAdapter(ArrayList<String[]> list, Context context, Intent intent, View loadingOverlay) {
         this.list = list;
         this.context = context;
         this.intent = intent;
+        this.loadingOverlay = loadingOverlay;
     }
 
     @Override
@@ -57,10 +60,25 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
 
         //Handle TextView and display string from your list
         TextView listItemText = (TextView) view.findViewById(R.id.list_item_string);
+        TextView listItemTime = (TextView) view.findViewById(R.id.list_item_time);
         listItemText.setText(list.get(position)[1]);
+        listItemTime.setText(list.get(position)[2]);
+
         //Handle buttons and add onClickListeners
-        Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
         Button viewBtn = (Button) view.findViewById(R.id.view_btn);
+        Button deleteBtn = (Button) view.findViewById(R.id.delete_btn);
+        Button updateBtn = (Button) view.findViewById(R.id.update_btn);
+
+        loadingOverlay.bringToFront();
+
+        viewBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.e("test", "view takki");
+                ForecastManager forecastManager = ForecastManager.getInstance(context);
+                forecastManager.viewForecast(list.get(position)[0], intent.getStringExtra("username"), context);
+            }
+        });
 
         deleteBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -82,12 +100,32 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
                 );
             }
         });
-        viewBtn.setOnClickListener(new View.OnClickListener(){
+
+        updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("test", "view takki");
-                ForecastManager forecastManager = ForecastManager.getInstance(context);
-                forecastManager.viewForecast(list.get(position)[0], intent.getStringExtra("username"), context);
+                Log.e("test", "update takki");
+
+                LoadingUtil.animateView(loadingOverlay, View.VISIBLE, 0.4f, 200);
+
+                ForecastManager.getInstance(context).updateForecast(list.get(position)[0], context.getApplicationContext(),
+                        new ForecastCallback<String[]>() {
+                            @Override
+                            public void whenReady(String[] ready) {
+                                LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
+                                if(ready[0].equals("failed")) {
+                                    Toast.makeText(context.getApplicationContext(), "Ekki tókst að uppfæra spá", Toast.LENGTH_SHORT).show();
+                                }else {
+                                    String[] forecastString = list.get(position);
+                                    forecastString[0] = ready[0];
+                                    forecastString[2] = ready[1];
+                                    list.set(position, forecastString);
+                                    notifyDataSetChanged();
+                                    Toast.makeText(context.getApplicationContext(), "Spá hefur verið uppfærð", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                );
             }
         });
 

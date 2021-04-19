@@ -17,7 +17,7 @@ public class ForecastViewAdapter extends FragmentPagerAdapter {
 
     private final int mTabCount;
     private Fragment mFragment = null;
-    private ForecastManager forecastManager;
+    private final ForecastManager forecastManager;
 
     private static final Map<String, String> mSeriesNameLookup = new HashMap<String, String>();
     {

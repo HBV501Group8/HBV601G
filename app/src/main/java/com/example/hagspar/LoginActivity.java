@@ -1,6 +1,9 @@
 package com.example.hagspar;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,17 +24,24 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    private String LOGIN_SUCCESSFUL = "Innskráning mótekin";
-    private String ERROR_MESSAGE_LOGIN = "Innskráning mistókst, reyndu aftur";
+    private final String LOGIN_SUCCESSFUL = "Innskráning mótekin";
+    private final String ERROR_MESSAGE_LOGIN = "Innskráning mistókst, reyndu aftur";
+
+    public static Intent newIntent(Context context){
+        Intent intent = new Intent(context, LoginActivity.class);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button submitBtn = (Button) findViewById(R.id.login_button);
         View loadingOverlay = (View) findViewById(R.id.loading_overlay);
         loadingOverlay.bringToFront();
+
+        Button submitBtn = (Button) findViewById(R.id.login_button);
+        Button registerBtn = (Button) findViewById(R.id.register_button);
 
         submitBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -64,6 +74,13 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, ERROR_MESSAGE_LOGIN, Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(RegisterActivity.newIntent(LoginActivity.this));
             }
         });
     }

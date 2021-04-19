@@ -65,7 +65,7 @@ public class ForecastManagerActivity extends AppCompatActivity {
     }
 
     public void drawList (ArrayList<String[]> list){
-        ForecastListAdapter forecastListAdapter = new ForecastListAdapter(list, this, getIntent());
+        ForecastListAdapter forecastListAdapter = new ForecastListAdapter(list, this, getIntent(), loadingOverlay);
         listView.setVisibility(View.VISIBLE);
         listView.setAdapter(forecastListAdapter);
     }

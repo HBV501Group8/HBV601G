@@ -192,4 +192,36 @@ public class NetworkManager {
         );
         mQueue.add(request);
     }
+
+    public void userRegister(String name, String email, String username, String password,
+                             final NetworkCallback<String> callback) {
+        JSONObject postData = new JSONObject();
+        try {
+            postData.put("name", name);
+            postData.put("email", email);
+            postData.put("username", username);
+            postData.put("password", password);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.POST, SERVER_URL + "registeruser/", postData, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    callback.onSuccess(response.get("register").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                callback.onFail(error.toString());
+            }
+        }
+        );
+        mQueue.add(request);
+    }
 }

@@ -154,7 +154,6 @@ public class ForecastBuilderActivity extends AppCompatActivity {
                                     Toast.makeText(ForecastBuilderActivity.this, ERROR_MESSAGE_GENERATION, Toast.LENGTH_SHORT).show();
                                 }else {
                                     forecastManager.viewForecast(ready, getIntent().getStringExtra("username"), ForecastBuilderActivity.this);
-                                    LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
                                 }
                             }
                         });

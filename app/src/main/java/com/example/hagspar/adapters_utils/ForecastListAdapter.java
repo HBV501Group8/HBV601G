@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,12 +26,14 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
     private Context context;
     private Intent intent;
     private View loadingOverlay;
+    private ListView listView;
 
-    public ForecastListAdapter(ArrayList<String[]> list, Context context, Intent intent, View loadingOverlay) {
+    public ForecastListAdapter(ArrayList<String[]> list, Context context, Intent intent, View loadingOverlay, ListView listView) {
         this.list = list;
         this.context = context;
         this.intent = intent;
         this.loadingOverlay = loadingOverlay;
+        this.listView = listView;
     }
 
     @Override
@@ -105,7 +108,7 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
             @Override
             public void onClick(View v) {
                 Log.e("test", "update takki");
-
+                listView.setVisibility(View.GONE);
                 LoadingUtil.animateView(loadingOverlay, View.VISIBLE, 0.4f, 200);
 
                 ForecastManager.getInstance(context).updateForecast(list.get(position)[0], context.getApplicationContext(),
@@ -113,6 +116,7 @@ public class ForecastListAdapter extends BaseAdapter implements ListAdapter {
                             @Override
                             public void whenReady(String[] ready) {
                                 LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
+                                listView.setVisibility(View.VISIBLE);
                                 if(ready[0].equals("failed")) {
                                     Toast.makeText(context.getApplicationContext(), "Ekki tókst að uppfæra spá", Toast.LENGTH_SHORT).show();
                                 }else {

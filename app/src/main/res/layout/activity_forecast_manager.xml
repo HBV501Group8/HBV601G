@@ -29,6 +29,12 @@
                 android:text="@string/new_forecast_button"/>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000" >
+    </View>
+
     <!-- Loading spinner -->
     <include layout="@layout/loading_overlay"/>
 
@@ -37,7 +43,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/forecastlist"
         android:visibility="gone"
-        android:divider="#FFCC00"
+        android:divider="#000000"
         android:dividerHeight="2dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

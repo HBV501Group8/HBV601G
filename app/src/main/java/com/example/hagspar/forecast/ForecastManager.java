@@ -131,6 +131,8 @@ public class ForecastManager {
                 try {
                     jsonBody = new JSONObject(result);
                     String[] ready = new String[]{jsonBody.getString("generatedID"), jsonBody.getString("time")};
+                    Log.e("test", ready[0]);
+                    Log.e("test", ready[1]);
                     callback.whenReady(ready);
                 } catch (JSONException e) {
                     e.printStackTrace();

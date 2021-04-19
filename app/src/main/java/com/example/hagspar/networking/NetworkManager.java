@@ -149,6 +149,7 @@ public class NetworkManager {
                 Request.Method.GET, SERVER_URL + "updateforecast/" + id , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.e("test", response.toString());
                 callback.onSuccess(response);
             }
         }, new Response.ErrorListener() {

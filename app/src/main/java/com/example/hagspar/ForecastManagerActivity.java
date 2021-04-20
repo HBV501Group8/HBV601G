@@ -36,6 +36,7 @@ public class ForecastManagerActivity extends AppCompatActivity {
         loadingOverlay = (View) findViewById(R.id.loading_overlay);
         loadingOverlay.bringToFront();
         listView = (ListView)findViewById(R.id.forecastlist);
+        listView.setVisibility(View.GONE);
 
         LoadingUtil.animateView(loadingOverlay, View.VISIBLE, 0.4f, 200);
 
@@ -65,7 +66,7 @@ public class ForecastManagerActivity extends AppCompatActivity {
     }
 
     public void drawList (ArrayList<String[]> list){
-        ForecastListAdapter forecastListAdapter = new ForecastListAdapter(list, this, getIntent());
+        ForecastListAdapter forecastListAdapter = new ForecastListAdapter(list, this, getIntent(), loadingOverlay, listView);
         listView.setVisibility(View.VISIBLE);
         listView.setAdapter(forecastListAdapter);
     }

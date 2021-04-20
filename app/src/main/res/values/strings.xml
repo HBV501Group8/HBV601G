@@ -1,14 +1,25 @@
 <resources>
     <string name="app_name">Hagspar</string>
 
-    <!--ForecastManagerActivity-->
-    <string name="view_button">Skoða</string>
-    <string name="delete_button">Eyða</string>
-    <string name="forecast_list_text">Spár</string>
-    <string name="new_forecast_button">Ný spá</string>
+    <!--LoginActivity-->
     <string name="prompt_username">Notendanafn</string>
     <string name="prompt_password">Lykilorð</string>
     <string name="log_in_button">Skrá inn</string>
+    <string name="register_button">Nýskráning</string>
+
+    <!--RegisterActivity-->
+    <string name="prompt_register_name">Nafn</string>
+    <string name="prompt_register_email">Tölvupóstur</string>
+    <string name="prompt_register_username">Notendanafn</string>
+    <string name="prompt_register_password">Lykilorð</string>
+    <string name="register_user_button">Skrá nýjan notanda</string>
+
+    <!--ForecastManagerActivity-->
+    <string name="view_button">Skoða</string>
+    <string name="delete_button">Eyða</string>
+    <string name="update_button">Uppfæra</string>
+    <string name="forecast_list_text">Spár</string>
+    <string name="new_forecast_button">Ný spá</string>
 
     <!--ForecastBuilderActivity-->
     <string name="forecast_name">Nafn spár</string>
@@ -45,7 +56,4 @@
         <item>11</item>
         <item>12</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>

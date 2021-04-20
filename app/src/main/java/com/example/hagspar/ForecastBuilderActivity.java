@@ -28,11 +28,9 @@ import java.util.Map;
 
 public class ForecastBuilderActivity extends AppCompatActivity {
 
-    private String ERROR_MESSAGE_NAME = "Vantar nafn á spá!";
-    private String ERROR_MESSAGE_SERIES = "Engar spábreytur valdar!";
-    private long mLastClickTime = 0;
-
-    private String ERROR_MESSAGE_GENERATION = "Ekki tókst að smíða spá, reyndu aftur!";
+    private final String ERROR_MESSAGE_NAME = "Vantar nafn á spá!";
+    private final String ERROR_MESSAGE_SERIES = "Engar spábreytur valdar!";
+    private final String ERROR_MESSAGE_GENERATION = "Ekki tókst að smíða spá, reyndu aftur!";
 
     private static final Map<String, String> seriesNameLookup = new HashMap<String, String>();
     {
@@ -150,12 +148,11 @@ public class ForecastBuilderActivity extends AppCompatActivity {
                             @Override
                             public void whenReady(String ready) {
                                 if(ready.equals("failed")) {
-                                    LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
-                                    Toast.makeText(ForecastBuilderActivity.this, ERROR_MESSAGE_GENERATION, Toast.LENGTH_SHORT).show();
                                     Log.e("test", ready);
                                     generateBtn.setEnabled(true);
-                                }else {
                                     LoadingUtil.animateView(loadingOverlay, View.GONE, 0, 200);
+                                    Toast.makeText(ForecastBuilderActivity.this, ERROR_MESSAGE_GENERATION, Toast.LENGTH_SHORT).show();
+                                }else {
                                     forecastManager.viewForecast(ready, getIntent().getStringExtra("username"), ForecastBuilderActivity.this);
                                 }
                             }

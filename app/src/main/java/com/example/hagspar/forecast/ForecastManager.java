@@ -122,7 +122,7 @@ public class ForecastManager {
         });
     }
 
-    public void updateForecast(String id, Context context, ForecastCallback<String> callback) {
+    public void updateForecast(String id, Context context, ForecastCallback<String[]> callback) {
         NetworkManager networkManager = NetworkManager.getInstance(context);
         networkManager.updateForecast(id, new NetworkCallback<String>() {
             @Override
@@ -130,7 +130,10 @@ public class ForecastManager {
                 JSONObject jsonBody = null;
                 try {
                     jsonBody = new JSONObject(result);
-                    callback.whenReady(jsonBody.getString("update"));
+                    String[] ready = new String[]{jsonBody.getString("generatedID"), jsonBody.getString("time")};
+                    Log.e("test", ready[0]);
+                    Log.e("test", ready[1]);
+                    callback.whenReady(ready);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

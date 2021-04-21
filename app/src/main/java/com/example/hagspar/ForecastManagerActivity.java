@@ -7,12 +7,19 @@ import android.widget.Button;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
 import com.example.hagspar.adapters_utils.LoadingUtil;
 import com.example.hagspar.forecast.ForecastCallback;
 import com.example.hagspar.adapters_utils.ForecastListAdapter;
 import com.example.hagspar.forecast.ForecastManager;
 import com.example.hagspar.usermanagement.User;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -48,6 +55,44 @@ public class ForecastManagerActivity extends AppCompatActivity {
             }
         });
 
+        logoutButton();
+        userText();
+    }
+
+    private void userText() {
+
+        //TODO Eftir að tengja við userJ
+        String SERVER_URL = "http://10.0.2.2:8080/android/";
+        TextView notandiText = (TextView) findViewById(R.id.notandi_text);
+
+        JSONObject postData = new JSONObject();
+
+        try {
+            //virkar ekki
+            String username = postData.getString("name");  //eða username
+            notandiText.setText(username);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            //sjá hvort að textview er á réttum stað
+            notandiText.setText("Tókst ekki");
+        }
+
+
+
+
+
+    }
+
+    private void logoutButton() {
+        //sign out button
+        Button logoutButton = (Button) findViewById(R.id.log_out);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //finish();
+                startActivity(new Intent(ForecastManagerActivity.this, LoginActivity.class));
+            }
+        });
     }
 
     @Override

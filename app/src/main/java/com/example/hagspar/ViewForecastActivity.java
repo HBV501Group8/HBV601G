@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.hagspar.forecast.ForecastManager;
 import com.example.hagspar.adapters_utils.ForecastViewAdapter;
@@ -41,6 +43,7 @@ public class ViewForecastActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.forecastViewPager);
         tabLayout = findViewById(R.id.forecastTabLayout);
 
+        signOut();
 
         for(ForecastResult result: mForecast.getForecastResults()) {
             tabLayout.addTab(tabLayout.newTab());
@@ -52,6 +55,19 @@ public class ViewForecastActivity extends AppCompatActivity {
 
         // It is used to join TabLayout with ViewPager.
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private void signOut() {
+        Button signOutButton = (Button)findViewById(R.id.log_out_view);
+        signOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //finish()
+                startActivity(new Intent(ViewForecastActivity.this, LoginActivity.class));
+            }
+        });
+
     }
 
     @Override

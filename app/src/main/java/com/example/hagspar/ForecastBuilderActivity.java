@@ -71,6 +71,8 @@ public class ForecastBuilderActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
 
+        signOut();
+
         // Add event handler for generate Forecast button
         Button generateBtn = (Button) findViewById(R.id.generate_forecast_button);
         generateBtn.setOnClickListener(new View.OnClickListener(){
@@ -79,6 +81,8 @@ public class ForecastBuilderActivity extends AppCompatActivity {
 
                 // Activate loading overlay
                 LoadingUtil.animateView(loadingOverlay, View.VISIBLE, 0.4f, 200);
+
+
 
 
                 // Define variables to be sent for generation
@@ -159,5 +163,19 @@ public class ForecastBuilderActivity extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void signOut() {
+        //Sign out button
+        Button logoutButton = (Button) findViewById(R.id.log_out_builder);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //finish();
+                startActivity(new Intent(ForecastBuilderActivity.this, LoginActivity.class));
+            }
+        });
+
     }
 }

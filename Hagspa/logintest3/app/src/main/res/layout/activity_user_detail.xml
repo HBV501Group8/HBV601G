@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDetailActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Real Name"
+        android:labelFor="@id/userRealname"
+        />
+
+    <EditText
+        android:id="@+id/userRealname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:hint="Name"
+        android:divider="#e44949"
+        android:dividerHeight="2sp"
+        android:listSelector="#54b49e"
+        android:labelFor="@id/userRealname"
+        android:layout_marginTop="40dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:labelFor="@id/emailuser"
+        android:layout_below="@+id/userRealname"/>
+
+
+
+    <EditText
+        android:id="@+id/emailuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:text="Email"
+        android:divider="#e44949"
+        android:dividerHeight="2sp"
+        android:listSelector="#54b49e"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/userRealname"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="userName"
+        android:labelFor="@id/emailuser"
+        android:layout_below="@+id/emailuser"/>
+
+
+
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Name"
+        android:text="userName"
+        android:divider="#e44949"
+        android:dividerHeight="2sp"
+        android:listSelector="#54b49e"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/emailuser"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:labelFor="@id/emailuser"
+        android:layout_below="@+id/username"/>
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:text="Password"
+        android:divider="#e44949"
+        android:dividerHeight="2sp"
+        android:listSelector="#54b49e"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/username"/>
+    <Button
+        android:id="@+id/btnupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:divider="#e44949"
+        android:dividerHeight="2sp"
+        android:listSelector="#54b49e"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/password"/>
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:text="Delete User"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/btnupdate"
+        android:divider="#e44949"
+        android:dividerHeight="2sp"
+        android:listSelector="#54b49e" />
+
+
+</RelativeLayout>

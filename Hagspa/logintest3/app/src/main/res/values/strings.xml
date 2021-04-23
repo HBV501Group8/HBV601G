@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Hagspár</string>
+    <string name="Register_Success">Registered successfully</string>
+    <string name="Registration_Failed">Registration failed</string>
+    <string name="User_Exssits">User already exists! please sign in</string>
+    <string name="Enter_All_Fields">Please enter all the fields</string>
+    <string name="Password_NotMatch">Passwords not matching</string>
+    <string name="Enter_All_Fields_Login">Please enter all the fields</string>
+    <string name="Sign_In_Successful">Sign in successfull</string>
+    <string name="Invalid_credentials">Invalid Credentials</string>
+    <string name="User_Key">username</string>
+    <string name="User_Key_Admin">username</string>
+    <string name="forecastType">forecastType</string>
+    <string name="NAR">NAR</string>
+    <string name="Arima">Arima</string>
+    <string name="forecastDuration">forecastDuration</string>
+    <string name="forecastName">forecastName</string>
+    <string name="selectedItems">selectedItems</string>
+    <string name="Need_Forecast_name">Need to enter Forecast name</string>
+    <string name="Fjoldi_Islenskra">Fjöldi Íslenskra ríkisborgara</string>
+    <string name="Fjoldi_Erlendra">Fjöldi Erlendra ríkisborgara</string>
+    <string name="Atvinnuleysi">Atvinnuleysi</string>
+    <string name="Atvinnuleysi_RVK">Atvinnuleysi í Reykjavík</string>
+    <string name="Einkaneysla">Einkaneysla</string>
+    <string name="Samneysla">Samneysla</string>
+    <string name="Fjarmunamyndun">Fjármunamyndun</string>
+    <string name="Utflutningurvara">Útflutningur vara</string>
+    <string name="Utflutningur_Thjonustu">Útflutningur þjónustu</string>
+    <string name="Innflutningur_thjonustu">Innflutningur þjónustu</string>
+    <string name="Verg_landframleidsla">Verg landframleiðsla</string>
+    <string name="Attrbutes_selected">\"Some attributes must be selected \"</string>
+    <string name="Enter_Forecast_Duration">Need to enter Forecast duration</string>
+    <string name="Too_Large_Duration">\"Too large value for duration \"</string>
+
+
+    <string-array name="names">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Other</item>
+        <item>Custom</item>
+
+    </string-array>
+
+</resources>

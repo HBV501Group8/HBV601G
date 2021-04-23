@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hagspar.adapters_utils.LoadingUtil;
@@ -72,6 +73,7 @@ public class ForecastBuilderActivity extends AppCompatActivity {
 
 
         signOut();
+        notandiText();
 
         // Add event handler for generate Forecast button
         Button generateBtn = (Button) findViewById(R.id.generate_forecast_button);
@@ -163,6 +165,15 @@ public class ForecastBuilderActivity extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void notandiText() {
+
+        TextView notandiText = (TextView) findViewById(R.id.notandi_text_builder);
+
+        //JSONObject postData = new JSONObject();
+        String userName = getIntent().getStringExtra("username");
+        notandiText.setText(userName);
     }
 
     private void signOut() {

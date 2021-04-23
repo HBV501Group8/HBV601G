@@ -61,12 +61,14 @@ public class ForecastManagerActivity extends AppCompatActivity {
 
     private void userText() {
 
-        //TODO Eftir að tengja við userJ
-        String SERVER_URL = "http://10.0.2.2:8080/android/";
+       
         TextView notandiText = (TextView) findViewById(R.id.notandi_text);
 
-        JSONObject postData = new JSONObject();
+        //JSONObject postData = new JSONObject();
+        String userName = getIntent().getStringExtra("username");
+        notandiText.setText(userName);
 
+        /*
         try {
             //virkar ekki
             String username = postData.getString("name");  //eða username
@@ -76,6 +78,9 @@ public class ForecastManagerActivity extends AppCompatActivity {
             //sjá hvort að textview er á réttum stað
             notandiText.setText("Tókst ekki");
         }
+
+
+         */
 
 
 

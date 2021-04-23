@@ -52,8 +52,6 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ViewForecastActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hagspar/ViewForecastActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_builder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_builder.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_manager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_manager.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_manager_forecast_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forecast_manager_forecast_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_forecast.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_forecast.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daemon/6.1.1/registry.bin" beforeDir="false" afterPath="$PROJECT_DIR$/daemon/6.1.1/registry.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daemon/6.1.1/registry.bin.lock" beforeDir="false" afterPath="$PROJECT_DIR$/daemon/6.1.1/registry.bin.lock" afterDir="false" />
@@ -63,7 +61,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_6_API_30]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -97,8 +95,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_XL_API_30" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-19T15:07:48.431Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_6_API_30" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-22T22:16:42.305Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android-custom-viewC:/Users/brynh/AppData/Local/Android/Sdk/sources/android-30/android/widget/LinearLayout.java_SELECTED" value="LinearLayout" />
@@ -238,10 +236,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="87" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1618788155856" />
-    <state x="93" y="93" width="1095" height="495" key="AVDManager" timestamp="1618845466932">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="112" y="118" width="1314" height="629" key="AVDManager" timestamp="1619138493677">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1618845466932" />
+    <state x="112" y="118" width="1314" height="629" key="AVDManager/0.0.1536.864@0.0.1536.864" timestamp="1619138493677" />
     <state x="433" y="172" key="AndroidCreateResourceFileDialog" timestamp="1618787858443">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

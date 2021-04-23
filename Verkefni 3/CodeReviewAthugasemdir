@@ -1,0 +1,23 @@
+Athugasemdir um virki:
+Main activity er með Login, en það er ekki komið neitt signup.
+Hægt er að signa sig beint inn án þess að vera með neitt í username og password.
+Engin menhöndlun til að fara á milli activities.
+(Eru með í TODO: signup, 
+Engin sjáanleg gagnagrunna virkni milli notenda og hlutebréfs.  Einungis hlutabréfs og til að birta öll hlutabréfin.
+Eftir að hanna "landscape view"
+Vantar yfirlit yfir hlutabréf hjá notenda.
+Skrítið að það er einungis hægt að kaupa/selja ákveðið hlutbréf með því að ýta á hlutabréf í activity_stock_view. Hægt að sortera þetta betur.
+Vantar "Toast" til að staðfesta hvort að notanda náði að kaupa hlutabréf eða selja.
+
+Athugasemdir um kóða.
+Óskýrt hvernig hlutbréfs hluturinn er í kóðanum.  Líklegast betra að hafa hlutabréfin sem model í stað fylki af strengjum. (stocks og allstocks).
+Í StockViewActivity eru strengir sem eru notaðir á hlutina í xml skránni skrifaðir beint inn í staðinn fyrir að setja þá í strings.xml skránna. 
+Í StockViewActivity er textinn "Stock name" í staðinn fyrir að sækja nafnið á hlutabréfinu. (lína 50).
+Vantar einhverskonar staðfestingu á að kaupa hlutabréf í StockViewActivity. (Cancel er með að loka popup).
+
+
+Hugmyndir við viðbætingu
+(Bæta við notification þegar t.d nýtt hlutabréf kemur á appið)
+Fá yfirlit yfir hlutabréf notenda á í acitivity_stock_list.
+Hafa strax valmöguleika til að kaupa hlutabréf í activity_stock_list.
+Hafa yfirlit(texta um hlutabréfið) yfir ákveðið hlutabréf í activity_stock_view (Sé að þetta er í TODO).
